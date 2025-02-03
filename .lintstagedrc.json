@@ -1,0 +1,8 @@
+{
+  "*.ts": [
+    "eslint . --fix"
+  ],
+  "*.spec.ts": [
+    "npm run test:staged"
+  ]
+}
