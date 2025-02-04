@@ -23,6 +23,6 @@ export type TheMoviePaginatedModel = {
 };
 
 export type MovieRecomendationsModelModel = {
-  treding: MovieModel[];
-  topRated: MovieModel[];
+  tredingFilms: MovieModel[];
+  topRatedFilms: MovieModel[];
 };

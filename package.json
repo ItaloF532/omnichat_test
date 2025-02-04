@@ -1,0 +1,12 @@
+{
+  "name": "omnichat_test",
+  "version": "1.0.0",
+  "description": "Como requisitado, foi criado um projeto que utiliza de frameworks para interagir com LLMs.\r Foram utilizados os modelos: gemma2-9b-it e mixtral-8x7b-32768",
+  "scripts": {
+    "start": "cd filme_agent && npm i && npm run build && npm run start:prod",
+    "test-llm-agent": "cd micro_service_tester && npm i && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

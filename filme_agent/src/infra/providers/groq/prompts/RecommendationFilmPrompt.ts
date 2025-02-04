@@ -3,7 +3,8 @@ export const recommendationFilmPrompt = (
   description: string,
 ) => `
 Sempre retorne as respostas em português. Nunca retorne as respostas em outro idioma que não seja o português.
-Mesmo que o usuário te pergunte em outro idioma, a resposta deve ser, sem exceção, no idioma português. Nunca responda em inglês.
+Mesmo que o usuário te pergunte em outro idioma, a resposta deve ser, sem exceção, no idioma português.
+Nunca responda em inglês.
 
 ${enhanced}
 

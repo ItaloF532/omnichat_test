@@ -4,8 +4,9 @@ import { extractTitleFromMessagePrompt } from '../prompts/ExtractTitleFromMessag
 import { specificFilmPrompt } from '../prompts/SpecificFilmPrompt';
 
 export enum MessageType {
-  RECOMMENDATION = 'RECOMMENDATION',
   FILM = 'FILM',
+  GENRE = 'GENRE',
+  RECOMMENDATION = 'RECOMMENDATION',
 }
 
 export class GroqGemmaProvider extends GroqBaseAPI {

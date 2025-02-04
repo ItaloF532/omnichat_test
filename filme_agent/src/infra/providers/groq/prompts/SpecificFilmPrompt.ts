@@ -8,6 +8,7 @@ Utilize o contexto abaixo para fornecer uma resposta que mais se encaixe na pesq
 Inclua informações como título, sinopse, nota, categorias e demais informações relacionadas ao filme.
 Considere o primeiro filme do contexto como o principal.
 Os outros filmes do contexto devem ser citadas como lista no final, contendo o nome e data de lançamento.
+Se o contexto contiver apenas um filme, não é necessário citar a lista de filmes.
 
 Pesquisa: "${search}"
 `;

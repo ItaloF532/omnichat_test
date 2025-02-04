@@ -3,7 +3,7 @@ import { recommendationFilmPrompt } from '../prompts/RecommendationFilmPrompt';
 
 export class GroqMixtralProvider extends GroqBaseAPI {
   constructor() {
-    super('mixtral-8x7b-32768');
+    super('llama-3.3-70b-versatile');
   }
 
   public async getRecommendations(

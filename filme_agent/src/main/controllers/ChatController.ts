@@ -10,29 +10,38 @@ export class ChatController {
   protected groqGemmaProvider = new GroqGemmaProvider();
   protected groqMixtralProvider = new GroqMixtralProvider();
 
+  private async getFilmFromMessage(message: string) {
+    const filmTitle = await this.groqGemmaProvider.getTitleFromMessage(message);
+    if (
+      filmTitle.toLowerCase() != 'nenhum' &&
+      filmTitle.toLowerCase() != 'nenhuma'
+    ) {
+      const searchedFilme = await this.theMovieDbProvider.getFilmByName(
+        filmTitle,
+      );
+
+      return JSON.stringify(searchedFilme);
+    }
+
+    return;
+  }
+
   async handleChat(message: string): Promise<string> {
     const checkMessage = await this.groqGemmaProvider.getMessageType(message);
-
+    console.log('checkMessage', checkMessage);
     if (checkMessage === MessageType.RECOMMENDATION) {
-      console.time('getRecomendations');
-      const trendingAndMostLikedFilmes =
-        await this.theMovieDbProvider.getRecomendations();
-      console.timeEnd('getRecomendations');
+      const res = Promise.all([
+        await this.theMovieDbProvider.getRecomendations(),
+        await this.getFilmFromMessage(message),
+      ]);
 
       return await this.groqMixtralProvider.getRecommendations(
-        JSON.stringify(trendingAndMostLikedFilmes),
+        `${res[1]} \n ${JSON.stringify(res[0])}`,
         message,
       );
     }
 
-    const filmTitle = await this.groqGemmaProvider.getTitleFromMessage(message);
-    const searchedFilme = await this.theMovieDbProvider.getFilmByName(
-      filmTitle,
-    );
-
-    return await this.groqGemmaProvider.message(
-      JSON.stringify(searchedFilme),
-      message,
-    );
+    const enhancedContext = await this.getFilmFromMessage(message);
+    return await this.groqGemmaProvider.message(enhancedContext, message);
   }
 }

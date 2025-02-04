@@ -1,0 +1,15 @@
+{
+  "name": "micro_service_tester",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Micro serviço para testar a comunicação com o filme_agent",
+  "dependencies": {
+    "inquirer": "^12.4.1"
+  }
+}

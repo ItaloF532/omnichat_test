@@ -32,15 +32,27 @@ voltadas apenas para dados de filmes.
 
 ## Sobre o projeto
 
+**Lembre-se de configurar as variaveis de ambiente em um documento _.env_ na pasta _film_agent_**
+
 Configuei o projeto com ts e nodemon para melhor experiência no desenvolvimento.
 Também deixei configurado um script para transpilar o projeto para JS.
 
-Para rodar o projeto, , com suas envs configuradas, basta rodar o seguinte comando em seu terminal:
+Para rodar o projeto, com suas envs configuradas, basta rodar o seguinte comando em seu terminal:
 
 ```
-npm i && npm start
+npm start
 ```
+
+O comando irá instalar as dependências do LLM e todar a aplicação.
 
 ## Sobre o micro serviço para executar as perguntas
 
-Para executar as perguntas, deixei tanto
+Para executar as perguntas, com a aplicação rodando, em um novo terminal execute:
+
+```
+npm run test-llm-agent
+```
+
+O qual irá executar as perguntas para o LLM.
+
+Ou se preferir, pode acessar a [documentação]() no PostMan, lá vocâ irá encontrar um fluxo de trabalho que irá executar todas as perguntas.

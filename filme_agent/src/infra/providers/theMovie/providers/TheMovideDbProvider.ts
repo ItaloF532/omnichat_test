@@ -19,8 +19,8 @@ export class TheMovieDbProvider extends TheMovieBaseApi {
     ]);
 
     return {
-      treding: response[0].data.results.slice(0, 5),
-      topRated: response[1].data.results.slice(0, 5),
+      tredingFilms: response[0].data.results.slice(0, 5),
+      topRatedFilms: response[1].data.results.slice(0, 5),
     };
   }
 
