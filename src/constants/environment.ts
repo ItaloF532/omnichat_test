@@ -2,10 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 export const ENVIRONMENT = {
-  PORT: process.env.PORT,
-
-  MONGO_URL: process.env.MONGO_URL,
-
-  OPENAI_KEY: process.env.OPENAI_KEY,
-  OPENAI_API_URL: process.env.OPENAI_API_URL,
+  PORT: `${process.env.PORT ?? ''}`,
+  GROQ_API_KEY: `${process.env.GROQ_API_KEY ?? ''}`,
+  THEMOVIEDB_API_KEY: `${process.env.THEMOVIEDB_API_KEY ?? ''}`,
 };
