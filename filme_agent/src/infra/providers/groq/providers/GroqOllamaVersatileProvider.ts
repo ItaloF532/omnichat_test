@@ -1,4 +1,5 @@
 import { GroqBaseAPI } from '../GroqBaseApi';
+import { messageIsSafeToUsePromp } from '../prompts/MessageIsSafeToUsePromp';
 import { recommendationFilmPrompt } from '../prompts/RecommendationFilmPrompt';
 
 export class GroqOllamaVersatileProvider extends GroqBaseAPI {
@@ -13,5 +14,11 @@ export class GroqOllamaVersatileProvider extends GroqBaseAPI {
     return await this.sendMessage(
       recommendationFilmPrompt(enhancedFilmsInformations, message),
     );
+  }
+
+  public async isSafeMessage(message: string): Promise<boolean> {
+    const res = await this.sendMessage(messageIsSafeToUsePromp(message));
+    console.log('res', res);
+    return res === 'true';
   }
 }

@@ -1,4 +1,3 @@
-//
 export const checkMessageTypePrompt = (message: string) => `
 Sempre me responda com apenas uma palavra. Nunca responda com mais de uma palavra.
 Mesmo que a pergunta seja longa, a resposta deve ser, sem exceção, com apenas uma palavra.
