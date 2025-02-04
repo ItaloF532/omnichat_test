@@ -1,6 +1,6 @@
 import {
-  GroqGemmaProvider,
   MessageType,
+  GroqGemmaProvider,
 } from '../../infra/providers/groq/providers/GroqGemmaProvider';
 import { GroqMixtralProvider } from '../../infra/providers/groq/providers/GroqMixtralProvider';
 import { TheMovieDbProvider } from '../../infra/providers/theMovie/providers/TheMovideDbProvider';
