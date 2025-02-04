@@ -1,7 +1,7 @@
 ## Desafio: Construindo um Chatbot especialista em Cinema.
 
 Como requisitado, foi criado um projeto que utiliza de frameworks para interagir com LLMs.
-Foram utilizados os modelos: gemma2-9b-it e mixtral-8x7b-32768
+Foram utilizados os modelos: gemma2-9b-it e llama-3.3-70b-versatile
 
 O gemma utilizei para efetuar consultas e extrair dados mais pontuais, como:
 
@@ -9,14 +9,10 @@ O gemma utilizei para efetuar consultas e extrair dados mais pontuais, como:
 - Extrair o título do filme de um prompt do usuário.
 - Pesquisar sobre apenas 1 filme
 
-Enquanto o mixtral, devido a sua maior capacidade de input tokens utilizei para lhe dar com recomendações
-de títulos populares e mais bem avaliados.
+Utilize o Ollama Versatile devido a sua maior capacidade de input tokens, assim forneci um maior contexto para lhe dar com recomendações
+de títulos populares, mais bem avaliados, e recomendações baseadas em nome e/ou categorias.
 
 ## Alguns disclaimers
-
-### Sobre o Agente
-
-O controller do projeto agiu como um agente. E/ou se preferir a aplicação toda poderia ser um agente.
 
 ### Sobre o RAG
 
@@ -53,6 +49,4 @@ Para executar as perguntas, com a aplicação rodando, em um novo terminal execu
 npm run test-llm-agent
 ```
 
-O qual irá executar as perguntas para o LLM.
-
-Ou se preferir, pode acessar a [documentação]() no PostMan, lá vocâ irá encontrar um fluxo de trabalho que irá executar todas as perguntas.
+O qual lhe dará algumas opções para executar as perguntas, seja uma por vez, ou todas de uma vez para o LLM.
