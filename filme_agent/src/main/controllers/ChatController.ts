@@ -2,13 +2,13 @@ import {
   MessageType,
   GroqGemmaProvider,
 } from '../../infra/providers/groq/providers/GroqGemmaProvider';
-import { GroqMixtralProvider } from '../../infra/providers/groq/providers/GroqMixtralProvider';
 import { TheMovieDbProvider } from '../../infra/providers/theMovie/providers/TheMovideDbProvider';
+import { GroqOllamaVersatileProvider } from '../../infra/providers/groq/providers/GroqOllamaVersatileProvider';
 
 export class ChatController {
   protected theMovieDbProvider = new TheMovieDbProvider();
   protected groqGemmaProvider = new GroqGemmaProvider();
-  protected groqMixtralProvider = new GroqMixtralProvider();
+  protected groqOllamaVersatileProvider = new GroqOllamaVersatileProvider();
 
   private async getFilmFromMessage(message: string) {
     const filmTitle = await this.groqGemmaProvider.getTitleFromMessage(message);
@@ -35,7 +35,7 @@ export class ChatController {
         await this.getFilmFromMessage(message),
       ]);
 
-      return await this.groqMixtralProvider.getRecommendations(
+      return await this.groqOllamaVersatileProvider.getRecommendations(
         `${res[1]} \n ${JSON.stringify(res[0])}`,
         message,
       );

@@ -1,7 +1,7 @@
 import { GroqBaseAPI } from '../GroqBaseApi';
 import { recommendationFilmPrompt } from '../prompts/RecommendationFilmPrompt';
 
-export class GroqMixtralProvider extends GroqBaseAPI {
+export class GroqOllamaVersatileProvider extends GroqBaseAPI {
   constructor() {
     super('llama-3.3-70b-versatile');
   }
